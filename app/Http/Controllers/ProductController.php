@@ -54,12 +54,12 @@ class ProductController extends Controller
     }
 
     // Show create product form
-    function create()
+    public function create()
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
-            return view("Productsform");
+        if (!Auth::check() || Auth::user()->role !== 'admin') {
+            return redirect()->route('home');
         }
-        return redirect()->route('home');
+        return view("Productsform");
     }
 
     // Store new product
@@ -230,13 +230,13 @@ class ProductController extends Controller
     }
 
     // Single product view
-   public function product($id)
-{
-    $product = Products::findOrFail($id);
-    $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
+    public function product($id)
+    {
+        $product = Products::findOrFail($id);
+        $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
 
-    return view('Singleproduct', compact('product', 'brands'));
-}
+        return view('Singleproduct', compact('product', 'brands'));
+    }
 
     // Search products
     public function search(Request $request)
@@ -253,17 +253,17 @@ class ProductController extends Controller
 
 
     // About page
-   public function about()
-{
-    $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
-    return view('About', compact('brands'));
-}
+    public function about()
+    {
+        $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
+        return view('About', compact('brands'));
+    }
 
-public function contact()
-{
-    $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
-    return view('Contact', compact('brands'));
-} 
+    public function contact()
+    {
+        $brands = Products::select('brand_name')->distinct()->pluck('brand_name');
+        return view('Contact', compact('brands'));
+    }
     public function index(Request $request)
     {
         $query = Products::query();

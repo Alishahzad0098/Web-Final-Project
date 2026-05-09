@@ -11,7 +11,7 @@ use App\Http\Controllers\DataTableController;
 
 // Home page route
 Route::get("/", [ProductController::class, "show"])->name('home');
-route::get("/products/{id}", [ProductController::class, "product"])->name('product');
+Route::get("/products/{id}", [ProductController::class, "product"])->whereNumber('id')->name('product');
 Route::get("/products", [ProductController::class, "productshow"])->name('productshow');
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 Route::get('/about', [ProductController::class, 'about'])->name('about');
