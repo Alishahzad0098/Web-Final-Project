@@ -1,61 +1,280 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛍️ Maison Chic — Laravel E-Commerce Platform
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-12.x-red?style=for-the-badge&logo=laravel" />
+  <img src="https://img.shields.io/badge/PHP-8.2-blue?style=for-the-badge&logo=php" />
+  <img src="https://img.shields.io/badge/MySQL-Database-orange?style=for-the-badge&logo=mysql" />
+  <img src="https://img.shields.io/badge/Theme-Black%20%26%20White-black?style=for-the-badge" />
 </p>
 
-## About Laravel
+> **Maison Chic** is a full-featured, elegantly designed e-commerce web application built with Laravel. Featuring a sleek black-and-white aesthetic, it provides a complete shopping experience for customers and a powerful admin panel for store management.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📸 Screenshots
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> *(Add your screenshots here)*
 
-## Learning Laravel
+| Home Page | Single Product | Admin Panel |
+|-----------|---------------|-------------|
+| ![Home]() | ![Product]() | ![Admin]()  |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## ✨ Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🛒 Customer Side
+- **Home Page** with dynamic hero carousel
+- **Product Listing** with search and filter functionality
+- **Single Product View** with detailed description
+- **Product Comparison** side-by-side feature
+- **Shopping Cart** — add, update, remove items
+- **Checkout** with order placement
+- **User Authentication** — Register, Login, Logout
+- **User Profile** editing
+- **Contact Us** page with message submission
+- **Order History** per user
 
-## Laravel Sponsors
+### 🔧 Admin Panel
+- **Admin Dashboard** with DataTables integration
+- **Product Management** — Create, Edit, Delete, View all products
+- **Order Management** — View all orders and order items
+- **User Management** — View and edit users
+- **Carousel Management** — Manage homepage banner slides
+- **Contact Messages** — View submitted messages
+- **Email Notifications** — New email/order notification system
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🏗️ Project Structure
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```
+maison-chic/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── CarouselController.php
+│   │   │   ├── CartController.php
+│   │   │   ├── ContactController.php
+│   │   │   ├── Controller.php
+│   │   │   ├── DataTableController.php
+│   │   │   ├── OrderController.php
+│   │   │   ├── ProductController.php
+│   │   │   └── UserController.php
+│   │   └── Kernel.php
+│   ├── Mail/
+│   ├── Models/
+│   │   ├── Admin.php
+│   │   ├── Carousel.php
+│   │   ├── Cart.php
+│   │   ├── ContactMessage.php
+│   │   ├── Order.php
+│   │   ├── Orderitem.php
+│   │   ├── Products.php
+│   │   └── User.php
+│   └── Providers/
+├── database/
+│   ├── factories/
+│   └── migrations/
+│       ├── create_users_table.php
+│       ├── create_carousels_table.php
+│       ├── create_admins_table.php
+│       ├── create_carts_table.php
+│       ├── create_orders_table.php
+│       ├── create_products_table.php
+│       ├── create_orderitems_table.php
+│       └── ...
+├── resources/
+│   └── views/
+│       ├── carousel/
+│       ├── emails/
+│       ├── layout/
+│       ├── vendor/
+│       ├── About.blade.php
+│       ├── Cart.blade.php
+│       ├── Checkout.blade.php
+│       ├── Compare.blade.php
+│       ├── Contact.blade.php
+│       ├── Home.blade.php
+│       ├── login.blade.php
+│       ├── register.blade.php
+│       ├── Singleproduct.blade.php
+│       ├── Searchitem.blade.php
+│       ├── Products.blade.php
+│       ├── admintable.blade.php
+│       ├── Ordertable.blade.php
+│       ├── Orderitemstable.blade.php
+│       ├── Productable.blade.php
+│       ├── Productsform.blade.php
+│       ├── Products.edit.blade.php
+│       ├── useredit.blade.php
+│       └── layout.blade.php
+└── ...
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🗃️ Database Schema
 
-## Code of Conduct
+| Table          | Description                          |
+|----------------|--------------------------------------|
+| `users`        | Registered customers                 |
+| `admins`       | Admin panel users                    |
+| `products`     | Product catalog                      |
+| `carts`        | Shopping cart items                  |
+| `orders`       | Customer orders                      |
+| `orderitems`   | Individual items in each order       |
+| `carousels`    | Homepage banner slides               |
+| `contact_messages` | Messages from the contact form  |
+| `cache`        | Laravel cache table                  |
+| `jobs`         | Laravel queue jobs                   |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🛠️ Tech Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Layer        | Technology                        |
+|--------------|-----------------------------------|
+| Backend      | PHP 8.2, Laravel 12.x             |
+| Frontend     | Blade Templates, HTML, CSS, JS    |
+| Database     | MySQL                             |
+| Local Server | XAMPP (Apache + MySQL)            |
+| Styling      | Custom CSS — Black & White Theme  |
+| Tables       | DataTables.js                     |
+| Package Mgr  | Composer 2.x, NPM                 |
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## ⚙️ Installation & Setup
+
+### Prerequisites
+- PHP >= 8.2
+- Composer 2.x
+- MySQL
+- XAMPP (or any local server)
+- Node.js & NPM
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/maison-chic.git
+cd maison-chic
+
+# 2. Install PHP dependencies
+composer install
+
+# 3. Install Node dependencies
+npm install && npm run dev
+
+# 4. Copy environment file
+cp .env.example .env
+
+# 5. Generate application key
+php artisan key:generate
+
+# 6. Configure your database in .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=maison_chic
+DB_USERNAME=root
+DB_PASSWORD=
+
+# 7. Run migrations
+php artisan migrate
+
+# 8. (Optional) Seed the database
+php artisan db:seed
+
+# 9. Start the development server
+php artisan serve
+```
+
+Visit: **http://localhost:8000**
+
+---
+
+## 🔐 Default Admin Access
+
+> *(Update these credentials after first login)*
+
+```
+URL:      /admin/login  (or as configured)
+Email:    admin@example.com
+Password: password
+```
+
+---
+
+## 📧 Email Configuration
+
+This project supports email notifications (new orders, contact messages). Configure your mail driver in `.env`:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_FROM_ADDRESS=noreply@maisonchic.com
+MAIL_FROM_NAME="Maison Chic"
+```
+
+---
+
+## 🚀 Deployment
+
+```bash
+# Optimize for production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+# Run migrations on production DB
+php artisan migrate --force
+```
+
+---
+
+## 📁 Key Pages & Routes
+
+| Route            | View                    | Description              |
+|------------------|-------------------------|--------------------------|
+| `/`              | `Home.blade.php`        | Landing page             |
+| `/products`      | `Productindex.blade.php`| All products             |
+| `/product/{id}`  | `Singleproduct.blade.php`| Product detail          |
+| `/cart`          | `Cart.blade.php`        | Shopping cart            |
+| `/checkout`      | `Checkout.blade.php`    | Order checkout           |
+| `/compare`       | `Compare.blade.php`     | Product comparison       |
+| `/contact`       | `Contact.blade.php`     | Contact form             |
+| `/register`      | `register.blade.php`    | User registration        |
+| `/login`         | `login.blade.php`       | User login               |
+| `/admin`         | `admintable.blade.php`  | Admin dashboard          |
+| `/admin/orders`  | `Ordertable.blade.php`  | Manage orders            |
+| `/admin/products`| `Productable.blade.php` | Manage products          |
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+---
+
+## 👨‍💻 Author
+
+**Ali Shahzad**
+- 📍 Rahim Yar Khan, Pakistan
+- 🎓 BS Computer Science — KFUEIT
+- 💼 [Fiverr](https://fiverr.com/) | [Upwork](https://upwork.com/) | [GitHub](https://github.com/)
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">Made with ❤️ using Laravel | Maison Chic © 2026</p>
