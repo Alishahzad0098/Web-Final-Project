@@ -11,16 +11,6 @@
 
 ---
 
-## 📸 Screenshots
-
-> *(Add your screenshots here)*
-
-| Home Page | Single Product | Admin Panel |
-|-----------|---------------|-------------|
-| ![Home]() | ![Product]() | ![Admin]()  |
-
----
-
 ## ✨ Features
 
 ### 🛒 Customer Side
